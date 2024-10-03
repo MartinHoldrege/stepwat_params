@@ -8,7 +8,7 @@
 
 # params ------------------------------------------------------------------
 
-n_sites <- 20 # target number of sites to select (including the 15 from Pennington)
+n_sites <- 30 # target number of sites to select (including the 15 from Pennington)
 
 # dependencies ------------------------------------------------------------
 
@@ -114,5 +114,6 @@ ggplot(clim3, aes(MAT, MAP)) +
 
 
 # save outpput ------------------------------------------------------------
-
-write_csv(clim3, 'data/sites_for_testing.R')
+clim4 <- clim3 %>% 
+  filter(type != 'other')
+write_csv(clim4, 'data/sites_for_testing.R')
